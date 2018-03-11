@@ -1,12 +1,14 @@
-package com.mwj.logistics.controller;
+package com.mwj.vegetable.controller;
 
-import com.mwj.logistics.entry.User;
-import com.mwj.logistics.service.IUserService;
-import com.mwj.logistics.service.imp.UserService;
-import com.mwj.logistics.vo.ResponseResult;
-import com.mwj.logistics.vo.Result;
+import com.mwj.vegetable.entry.User;
+import com.mwj.vegetable.service.IUserService;
+import com.mwj.vegetable.vo.ResponseResult;
+import com.mwj.vegetable.vo.Result;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpSession;
@@ -15,8 +17,8 @@ import javax.servlet.http.HttpSession;
 @RequestMapping(value = "/")
 public class LoginController {
 
-    @Resource
-    private IUserService userService;
+//    @Resource
+//    private IUserService userService;
 
     @RequestMapping(value = "index", method = RequestMethod.GET)
     public String index() {
@@ -28,12 +30,12 @@ public class LoginController {
     public ResponseResult login(@ModelAttribute User user, HttpSession session) {
         ResponseResult responseResult = new ResponseResult();
         responseResult.setResult(Result.SUCCESS);
-        User loginUser = userService.login(user.getUserName(), user.getPassword());
-        if (loginUser == null){
-            responseResult.setResult(Result.FAILURE);
-        }else {
-            session.setAttribute("authority",loginUser.isAuthority());
-        }
+//        User loginUser = userService.login(user.getUserName(), user.getPassword());
+//        if (loginUser == null){
+//            responseResult.setResult(Result.FAILURE);
+//        }else {
+//            session.setAttribute("authority",loginUser.isAuthority());
+//        }
         return responseResult;
     }
 

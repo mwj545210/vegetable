@@ -23,7 +23,7 @@
                 if(window.confirm("确定删除所选记录？")){
                     $.ajax( {
                         type : "get",
-                        url : '/logistics/delLogistics.do?ids=' + ids, //要自行删除的action
+                        url : '/vegetable/delLogistics.do?ids=' + ids, //要自行删除的action
                         dataType : 'json',
                         success : function(data) {
                             if (data.result == "SUCCESS"){
@@ -48,7 +48,7 @@
                 alert("最多选择一个物流进行编辑")
             }else {
                 var id = checkbox[0].value;
-                window.location.href="/logistics/editLogistics.do?id=" + id;
+                window.location.href="/vegetable/editLogistics.do?id=" + id;
             }
         }
 
@@ -57,7 +57,7 @@
             if(code!="") {
                 $.ajax({
                     type: "get",
-                    url: '/logistics/queryLogistics.do?code=' + code,
+                    url: '/vegetable/queryLogistics.do?code=' + code,
                     dataType: 'json',
                     success: function (data) {
                         $("#table tr:first").siblings('tr').remove();
@@ -123,7 +123,7 @@
                 <div class="result-title">
                     <c:if test="${authority}">
                         <div class="result-list">
-                            <a class="btn btn2" href="/logistics/addLogistics.do">新增物流</a>
+                            <a class="btn btn2" href="/vegetables/addLogistics.do">新增物流</a>
                             <a class="btn btn2" onclick="edit()">编辑物流</a>
                             <a class="btn btn2" onclick="del()">删除物流</a>
                         </div>
@@ -139,14 +139,14 @@
                             <th>物流公司</th>
                             <th>物流内容</th>
                         </tr>
-                        <c:forEach items="${logistics}" var="logistic">
+                        <c:forEach items="${vegetables}" var="vegetable">
                         <tr>
-                            <td class="tc"><input name="checkbox" type="checkbox" value="${logistic.logisticId}"></td>
-                            <td>${logistic.logisticId}</td> <!--标签ID-->
-                            <td>${logistic.logisticName}</td>
-                            <td>${logistic.logisticCode}</td> <!--购买者用户名-->
-                            <td>${logistic.logisticCompany}</td> <!--销售者用户名-->
-                            <td>${logistic.logisticContent}</td> <!--订单时间-->
+                            <td class="tc"><input name="checkbox" type="checkbox" value="${vegetable.logisticId}"></td>
+                            <td>${vegetable.logisticId}</td> <!--标签ID-->
+                            <td>${vegetable.logisticName}</td>
+                            <td>${vegetable.logisticCode}</td> <!--购买者用户名-->
+                            <td>${vegetable.logisticCompany}</td> <!--销售者用户名-->
+                            <td>${vegetable.logisticContent}</td> <!--订单时间-->
                         </tr>
                         </c:forEach>
                     </table>

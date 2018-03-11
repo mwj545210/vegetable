@@ -24,7 +24,7 @@
             <ul class="sidebar-list">
                 <li>
                     <ul class="sub-menu">
-                        <li><a href="/logistics/listLogistics.do"><i class="icon-font"></i>物流信息列表</a></li>
+                        <li><a href="/vegetables/listLogistics.do"><i class="icon-font"></i>物流信息列表</a></li>
                     </ul>
                 </li>
             </ul>
@@ -38,25 +38,25 @@
         </div>
         <div class="result-wrap">
             <div class="result-content">
-                <form:form action="/logistics/saveLogistics.do" method="post" commandName="logistic">
+                <form:form action="/vegetables/saveLogistics.do" method="post" commandName="vegetable">
                     <table class="insert-tab" width="100%">
-                        <input type="hidden" name="logisticId" value="${logistic.logisticId}"/>
+                        <input type="hidden" name="logisticId" value="${vegetable.logisticId}"/>
                         <tbody>
                         <tr>
                             <th>物流名称：</th>
-                            <td><input name="logisticName" value="${logistic.logisticName}"/></td>
+                            <td><input name="logisticName" value="${vegetable.logisticName}"/></td>
                         </tr>
                         <tr>
                             <th>物流编码：</th>
-                            <td><input name="logisticCode" value="${logistic.logisticCode}"/></td>
+                            <td><input name="logisticCode" value="${vegetable.logisticCode}"/></td>
                         </tr>
                         <tr>
                             <th>物流公司：</th>
-                            <td><input name="logisticCompany" value="${logistic.logisticCompany}"/></td>
+                            <td><input name="logisticCompany" value="${vegetable.logisticCompany}"/></td>
                         </tr>
                         <tr>
                             <th>物流内容：</th>
-                            <td><input name="logisticContent" value="${logistic.logisticContent}"/></td>
+                            <td><input name="logisticContent" value="${vegetable.logisticContent}"/></td>
                         </tr>
                         <tr>
                             <th></th>
